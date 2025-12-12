@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Signup — E-Shop</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="brand">E-Shop</h1>
+    <div id="userInfo"></div>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="cart.html">Cart</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>Create Account</h2>
+    <form id="signupFormSimple">
+      <label>Email</label>
+      <input id="signupEmail2" type="email" required>
+      <label>Password</label>
+      <input id="signupPassword2" type="password" required>
+      <button type="submit" class="btn">Sign Up</button>
+    </form>
+    <p id="signupError2" class="hint"></p>
+  </main>
+
+  <footer class="site-footer">
+    <p>© E-Shop — Signup</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // small handler if you want quick signup on this page
+      const form = document.getElementById('signupFormSimple');
+      if (form && typeof signup === 'function') {
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const em = document.getElementById('signupEmail2').value;
+          const pw = document.getElementById('signupPassword2').value;
+          const out = document.getElementById('signupError2');
+          try {
+            await signup(em, pw);
+            out.style.color = 'green';
+            out.textContent = 'Account created and logged in. Redirecting...';
+            setTimeout(() => window.location.href = 'index.html', 800);
+          } catch (err) {
+            out.style.color = 'red';
+            out.textContent = err.message || 'Signup failed';
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>E-Shop — Login / Signup</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-left"><h1 class="brand">E-Shop</h1></div>
+    <div class="header-right" id="userInfo"></div>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="cart.html">Cart</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main class="container auth-box">
+    <section class="auth-left">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <label>Email</label>
+        <input id="email" type="email" required>
+        <label>Password</label>
+        <input id="password" type="password" required>
+        <button type="submit" class="btn">Login</button>
+      </form>
+      <p id="error" class="hint"></p>
+    </section>
+
+    <section class="auth-right">
+      <h2>Signup</h2>
+      <form id="signupForm">
+        <label>Email</label>
+        <input id="signupEmail" type="email" required>
+        <label>Password</label>
+        <input id="signupPassword" type="password" required>
+        <button type="submit" class="btn">Create Account</button>
+      </form>
+      <p id="signupError" class="hint"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© E-Shop — Auth</p>
+  </footer>
+
+  <script>
+    // UI initialization in script.js will attach submit handlers and auth guard
+  </script>
+</body>
+</html>

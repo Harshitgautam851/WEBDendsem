@@ -1,0 +1,123 @@
+/* Basic beginner-friendly styles (simple and readable) */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #222;
+}
+
+header {
+    background: #02830d;
+    padding: 12px 10px;
+    color: #fff;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 20px;
+}
+
+nav {
+    margin-top: 8px;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 18px;
+    border-radius: 6px;
+    box-shadow: 0 0 8px #ddd;
+}
+
+.hero img {
+    width: 100%;
+    border-radius: 6px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.features {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.feature-box {
+    flex: 1 1 200px;
+    background: #fbfbfb;
+    padding: 12px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.product {
+    border: 1px solid #e6e6e6;
+    padding: 12px;
+    border-radius: 6px;
+    margin: 12px 0;
+    background: #fafafa;
+}
+
+.product img {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+button {
+    background: #02830d;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 8px;
+}
+
+button:hover {
+    opacity: 0.95;
+}
+
+label {
+    display: block;
+    margin-top: 8px;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 6px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.hint {
+    margin-top: 10px;
+    color: red;
+    font-weight: 600;
+}
+
+/* small screens */
+@media (max-width: 480px) {
+    .features {
+        flex-direction: column;
+    }
+}

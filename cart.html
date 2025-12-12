@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>E-Shop — Cart</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-left"><h1 class="brand">E-Shop</h1></div>
+    <div class="header-right" id="userInfo"></div>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="cart.html">Cart</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>Your Cart</h2>
+    <div id="cartItems" class="cart-items">
+      <!-- script.js fills with cart rows -->
+    </div>
+
+    <aside id="cartSummary" class="cart-summary">
+      <!-- total, quantity, checkout button inserted by script.js -->
+    </aside>
+
+    <div class="note">
+      <p class="muted">You must be logged in to place order. Use Signup / Login if new.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© E-Shop — Cart</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof renderCart === 'function') renderCart();
+    });
+  </script>
+</body>
+</html>

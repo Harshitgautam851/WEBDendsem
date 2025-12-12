@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>E-Shop — Products</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- header -->
+  <header class="site-header">
+    <div class="header-left"><h1 class="brand">E-Shop</h1></div>
+    <div class="header-right" id="userInfo"></div>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="cart.html">Cart</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="top-bar">
+      <h2>Products</h2>
+      <div class="top-controls">
+        <input id="searchBox" placeholder="Search products..." />
+        <select id="categoryFilter">
+          <option value="">All categories</option>
+          <option value="clothes">Clothes</option>
+          <option value="electronics">Electronics</option>
+          <option value="handmade">Handmade</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="products-list">
+      <div id="productsList" class="products-grid">
+        <!-- product cards inserted by script.js -->
+      </div>
+    </section>
+
+    <section class="note">
+      <p class="muted">Click product name to see details. Add to cart requires login (demo auth).</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© E-Shop — Products</p>
+  </footer>
+
+  <!-- small inline script to activate filters -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // wire search + filter events handled by script.js
+      const search = document.getElementById('searchBox');
+      const cat = document.getElementById('categoryFilter');
+      if (search) {
+        search.addEventListener('input', () => {
+          if (typeof renderProducts === 'function') renderProducts(search.value, cat.value);
+        });
+      }
+      if (cat) {
+        cat.addEventListener('change', () => {
+          if (typeof renderProducts === 'function') renderProducts(search.value, cat.value);
+        });
+      }
+      // initial render
+      if (typeof renderProducts === 'function') renderProducts();
+    });
+  </script>
+</body>
+</html>
